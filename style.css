@@ -6,7 +6,7 @@ input {
   background-color: #021B27;
   border: 0px;
   width: 90%;
-  font-size: 3em;
+  font-size: 4em;
   font-weight: 600;
   outline: none;
   color: transparent;
@@ -18,5 +18,17 @@ input {
   height: 4em;
   width: 100%;
   text-align: center;
-  margin-top: 25%
+  margin-top: 10%
+}
+
+#clock-wrapper {
+  text-align: center;
+  color: #E7E8CD;
+  font-weight: 200;
+}
+#time {
+  font-size: 6em;
+}
+#date {
+  font-size: 2em;
 }

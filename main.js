@@ -4,24 +4,48 @@ $(document).ready(function () {
   ];
   var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
-  var currentdate = new Date();
-  var currentMont = months[currentdate.getMonth()];
-  var currentDay = currentdate.getDate();
-  var currentWeekDay = days[currentdate.getDay()];
-  var date = currentWeekDay + ", " + currentMont + " " + currentDay;
-  console.log(date);
+  function dateFunc() {
+    var currentDate = new Date();
+    currentMonth = months[currentDate.getMonth()];
+    currentDay = currentDate.getDate();
+    currentWeekDay = days[currentDate.getDay()];
 
-  var currentHour = currentdate.getHours();
-  var currentMin = currentdate.getMinutes();
-  var time = currentHour + ":" + currentMin;
-  console.log(time);
+    function ordinalCheck() {
+      var currentDayString = currentDay.toString();
 
-  var dateDiv = $("#date");
-  var timeDiv = $("#time");
-
-  function test() {
-    dateDiv.text(date);
-    timeDiv.text(time);
+      if (currentDayString.endsWith(1)) {
+        currentDay += "ST";
+      } else if (currentDayString.endsWith(2)) {
+        currentDay += "ND";
+      } else if (currentDayString.endsWith(3)) {
+        currentDay += "RD";
+      } else {
+        currentDay += "TH";
+      }
+    }
+    ordinalCheck();
+    document.getElementById("date").innerHTML = currentWeekDay + ", " + currentMonth + " " + currentDay;
+    setTimeout(function () {
+      dateFunc();
+    }, 60000);
   }
-  test();
+  dateFunc();
+
+  function runTimefunc() {
+    function checkTime(i) {
+      return (i < 10) ? "0" + i : i;
+    }
+
+    function timeFunc() {
+      var currentTime = new Date();
+      currentHour = checkTime(currentTime.getHours());
+      currentMin = checkTime(currentTime.getMinutes());
+      document.getElementById("time").innerHTML = currentHour + ":" + currentMin;
+      setTimeout(function () {
+        timeFunc()
+      }, 500);
+    }
+    timeFunc();
+  }
+  runTimefunc();
 });
