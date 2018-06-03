@@ -16,15 +16,42 @@
     function runScript(e) {
       if (e.keyCode == 13) {
         e.preventDefault();
-        var input = $("#scriptBox").val().trim();
+        var input = $("#text-input").val().trim();
         var command = "";
         var search = "";
-        $("#scriptBox").val("");
+        var foo;
+        $("#text-input").val("");
         
-        command = input.substring(0, input.indexOf("-") + 1);
+        command = input.substring(0, input.indexOf("-") + 1).toUpperCase();
         search = input.substring(input.indexOf("-") + 1);
 
-        search = search.replace(/\s/g, '');
+        search = search.trim();
+
+        // ********* THIS IS BEING TESTED *********
+
+        // var test = [
+        //   {
+        //     "cmd": "G-",
+        //     "search": search,
+        //     "URL": "http://github.com/",
+        //     "searchURL": "search?q="
+        //   }
+        // ]
+
+        // function testFunc() {
+        //   for(var i = 0; i < test.length; i++) {
+        //     if(command === test[i].cmd) {
+        //       foo = test[i];
+        //       runFuncTest();
+        //     }
+        //   }
+        // }
+        // testFunc();
+
+        // function runFuncTest() {
+        //   window.open(foo.URL + foo.searchURL + foo.search);
+        // }          
+        // ****************************************
 
         switch (command.toUpperCase()) {
           case "G-":
@@ -41,6 +68,12 @@
             break;
           case "RI-":
             replIt();
+            break;
+          case "SO-":
+            stackoverflowSearch();
+            break;
+          case "MDN-":
+            mdnSearch();
             break;
           default:
             {
@@ -78,6 +111,14 @@
           window.open("http://repl.it/languages/JavaScript");
         }
 
+        function stackoverflowSearch() {
+          window.open("https://stackoverflow.com/search?q=" + search);
+        }
+
+        function mdnSearch() {
+          window.open("https://developer.mozilla.org/en-US/search?q=" + search);
+        }
+
         return false;
       }
     }
@@ -90,7 +131,7 @@
 
   <div id="input-wrapper">
     <form id="form">
-      <input id="scriptBox" type="text" onkeypress="return runScript(event)" autofocus autocomplete="false">
+      <input id="text-input" type="text" onkeypress="return runScript(event)" autofocus autocomplete="false">
     </form>
   </div>
 
