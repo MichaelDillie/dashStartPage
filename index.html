@@ -21,7 +21,7 @@
         var search = "";
         var foo;
         $("#text-input").val("");
-        
+
         command = input.substring(0, input.indexOf("-") + 1).toUpperCase();
         search = input.substring(input.indexOf("-") + 1);
 
@@ -29,12 +29,40 @@
 
         // ********* THIS IS BEING TESTED *********
 
-        // var test = [
-        //   {
+        // var test = [{
+        //     "site": "GitHub",
         //     "cmd": "G-",
         //     "search": search,
         //     "URL": "http://github.com/",
         //     "searchURL": "search?q="
+        //   },
+        //   {
+        //     "site": "YouTube",
+        //     "cmd": "Y-",
+        //     "search": search,
+        //     "URL": "http://youtube.com/",
+        //     "searchURL": "search?q="
+        //   },
+        //   {
+        //     "site": "Reddit",
+        //     "cmd": "R-",
+        //     "search": search,
+        //     "URL": "https://www.reddit.com/",
+        //     "searchURL": "search?q="
+        //   },
+        //   {
+        //     "site": "WakaTime",
+        //     "cmd": "WT-",
+        //     "search": search,
+        //     "URL": "https://wakatime.com/dashboard",
+        //     "searchURL": null
+        //   },
+        //   {
+        //     "site": "Replit",
+        //     "cmd": "RI-",
+        //     "search": search,
+        //     "URL": "http://repl.it/languages/JavaScript",
+        //     "searchURL": null
         //   }
         // ]
 
