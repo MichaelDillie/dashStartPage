@@ -1,0 +1,19 @@
+body {
+  background-color: #021B27;
+}
+input {
+  background-color: #021B27;
+  border: 0px;
+  width: 90%;
+  font-size: 3em;
+  outline: none;
+  color: transparent;
+  text-shadow: 0 0 0 #E7E8CD;
+  text-align: center;
+}
+#wrapper {
+  height: 4em;
+  width: 100%;
+  text-align: center;
+  margin-top: 25%
+}
