@@ -14,13 +14,13 @@ $(document).ready(function () {
       var currentDayString = currentDay.toString();
 
       if (currentDayString.endsWith(1)) {
-        currentDay += " ST";
+        currentDay += "ST";
       } else if (currentDayString.endsWith(2)) {
-        currentDay += " ND";
+        currentDay += "ND";
       } else if (currentDayString.endsWith(3)) {
-        currentDay += " RD";
+        currentDay += "RD";
       } else {
-        currentDay += " TH";
+        currentDay += "TH";
       }
     }
     ordinalCheck();

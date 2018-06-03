@@ -20,34 +20,26 @@
         var command = "";
         var search = "";
         $("#scriptBox").val("");
+        
+        command = input.substring(0, input.indexOf("-") + 1);
+        search = input.substring(input.indexOf("-") + 1);
 
-        command += input[0];
-        command += input[1];
-
-        if (input[2] === " ") {
-          for (var i = 3; i < input.length; i++) {
-            search += input[i];
-          }
-        } else {
-          for (var i = 2; i < input.length; i++) {
-            search += input[i];
-          }
-        }
+        search = search.replace(/\s/g, '');
 
         switch (command.toUpperCase()) {
-          case "-G":
+          case "G-":
             githubSearch();
             break;
-          case "-Y":
+          case "Y-":
             youtubeSearch();
             break;
-          case "-R":
+          case "R-":
             redditSearch();
             break;
-          case "-W":
+          case "W-":
             wakaTime();
             break;
-          case "-I":
+          case "RI-":
             replIt();
             break;
           default:
