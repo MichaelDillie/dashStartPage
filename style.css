@@ -32,3 +32,6 @@ input {
 #date {
   font-size: 2em;
 }
+#ordinal {
+  font-size: .5em;
+}

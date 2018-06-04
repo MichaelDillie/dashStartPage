@@ -8,7 +8,7 @@
   <link href="https://fonts.googleapis.com/css?family=Oswald:200,600" rel="stylesheet">
   <link rel="stylesheet" href="./style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <title>Dash Start Page</title>
+  <title>Dash</title>
 </head>
 
 <body>
@@ -114,7 +114,9 @@
   </script>
 
   <div id="clock-wrapper">
-    <div id="date"></div>
+    <div id="date">
+      <span id="ordinal">test</span>
+    </div>
     <div id="time"></div>
   </div>
 
@@ -122,6 +124,12 @@
     <form id="form">
       <input id="text-input" type="text" onkeypress="return runScript(event)" autofocus autocomplete="false">
     </form>
+  </div>
+
+  <div id="testing-wrapper">
+    <p>Commands</p>
+    <div>GitHub</div>
+    <div>g- `SEARCH`</div>
   </div>
 
   <script src="main.js"></script>
