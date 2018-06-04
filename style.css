@@ -1,9 +1,12 @@
 body {
-  background-color: #021B27;
+  /* background: url("images/purple-new-york-street-night-wallpaper-4.jpg")no-repeat center center fixed; */
+  background: url("images/vek-labs-218896-unsplash.jpg")no-repeat center center fixed;
+  /* background-color: #021B27; */
+  background-size: cover;
   font-family: 'Oswald', sans-serif;
 }
 input {
-  background-color: #021B27;
+  background-color: transparent;
   border: 0px;
   width: 90%;
   font-size: 4em;

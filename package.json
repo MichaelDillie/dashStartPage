@@ -2,9 +2,10 @@
   "name": "dashStartPage",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "main.js",
   "dependencies": {
-    "moment": "^2.22.2"
+    "moment": "^2.22.2",
+    "weather-js": "^2.0.0"
   },
   "devDependencies": {},
   "scripts": {
