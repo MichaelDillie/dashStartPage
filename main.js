@@ -1,32 +1,36 @@
 // var weather = require('weather-js');
 $(document).ready(function () {
 
-  var keys = require("./keys.js");
-  var key = keys.darkSkyKey.apiKey
+  // ************************** UNDER TESTING **************************
 
-  function test() {
-    if ("geolocation" in navigator) {
-      /* geolocation is available */
-      navigator.geolocation.getCurrentPosition(function(position) {
-        var lat = position.coords.latitude;
-        var lon = position.coords.longitude;
-        weatherFunc(lat, lon);
-      });
-    } else {
-      /* geolocation IS NOT available */
-      console.log("NO");
-    }
-  }
-  test();
-  function weatherFunc(lat, lon) {
-    var queryURL = "https://api.darksky.net/forecast/" + key + "/" + lat + "," + lon;
-    $.ajax({
-      url: queryURL,
-      method: "GET"
-  }).then(function (response) {
-    console.log("THIS IS THEN");
-  });
-  }
+  // var keys = require("./keys.js");
+  // var key = keys.darkSkyKey.apiKey
+
+  // function test() {
+  //   if ("geolocation" in navigator) {
+  //     /* geolocation is available */
+  //     navigator.geolocation.getCurrentPosition(function(position) {
+  //       var lat = position.coords.latitude;
+  //       var lon = position.coords.longitude;
+  //       weatherFunc(lat, lon);
+  //     });
+  //   } else {
+  //     /* geolocation IS NOT available */
+  //     console.log("NO");
+  //   }
+  // }
+  // test();
+  // function weatherFunc(lat, lon) {
+  //   var queryURL = "https://api.darksky.net/forecast/" + key + "/" + lat + "," + lon;
+  //   $.ajax({
+  //     url: queryURL,
+  //     method: "GET"
+  // }).then(function (response) {
+  //   console.log("THIS IS THEN");
+  // });
+  // }
+
+  // *******************************************************************
 
   var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October",
     "November", "December"
