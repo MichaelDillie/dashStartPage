@@ -1,11 +1,30 @@
-var weather = require('weather-js');
+// var weather = require('weather-js');
 $(document).ready(function () {
 
-
   function test() {
-    console.log("Hello");
+    if ("geolocation" in navigator) {
+      /* geolocation is available */
+      navigator.geolocation.getCurrentPosition(function(position) {
+        var lat = position.coords.latitude;
+        var lon = position.coords.longitude;
+        weatherFunc(lat, lon);
+      });
+    } else {
+      /* geolocation IS NOT available */
+      console.log("NO");
+    }
   }
   test();
+  function weatherFunc(lat, lon) {
+    console.log(lat + " " + lon);
+    var queryURL = "https://api.darksky.net/forecast/5faa0ec95abd97add77a52a3a14d4c87/30.546312,-97.8627695" + apiKey + "/" + lat + "," + lon;
+    $.ajax({
+      url: queryURL,
+      method: "GET"
+  }).then(function (response) {
+
+  });
+  }
 
   var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October",
     "November", "December"
